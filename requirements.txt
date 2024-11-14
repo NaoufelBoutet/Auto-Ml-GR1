@@ -1,0 +1,7 @@
+django
+pandas
+openpyxl
+psycopg2
+pymongo
+xlrd
+pytest-django

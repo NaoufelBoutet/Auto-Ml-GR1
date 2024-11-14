@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
+env_path = Path('../../.env')
+load_dotenv(dotenv_path=env_path)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -87,9 +90,9 @@ DATABASES = {
         'NAME': 'nom_bdd_mongo',
         'CLIENT': {
             'host': os.getenv("MONGO_HOST"),
-            'port': int(os.getenv("MONGO_PORT")),
-            'username': os.getenv("MONGO_USER"),
-            'password': os.getenv("MONGO_PASSWORD"),
+            'port': int(os.getenv("MONGO_PORT")) ,
+            'username': os.getenv("MONGO_USER") if os.getenv("MONGO_USER") else None,
+            'password': os.getenv("MONGO_PASSWORD") if os.getenv("MONGO_PASSWORD") else None,
         }
     }
 }

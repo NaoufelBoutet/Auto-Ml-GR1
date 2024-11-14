@@ -23,7 +23,6 @@ from auth_user import views as auth_user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('admin/', admin.site.urls),
     path('', main_app_autoML_views.home, name='home'),
     path('login/',auth_user_views.show_login, name='show_login'),
     path('sign/', auth_user_views.show_sign, name='show_sign'),

@@ -1,4 +1,4 @@
-class MongoRouter:
+class MyDatabaseRouter:
     """
     Un routeur pour gérer les opérations de base de données MongoDB.
     """

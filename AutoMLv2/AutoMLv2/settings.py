@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
-env_path = Path('../../.env')
+env_path = Path(r'..\.env')
 load_dotenv(dotenv_path=env_path)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -97,7 +97,7 @@ DATABASES = {
     }
 }
 
-DATABASE_ROUTERS = ['myproject.database_router.MyDatabaseRouter']
+DATABASE_ROUTERS = ['AutoMLv2.database_router.MyDatabaseRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,9 +81,20 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'mongo': {
+        'ENGINE': 'djongo',
+        'NAME': 'nom_bdd_mongo',
+        'CLIENT': {
+            'host': os.getenv("MONGO_HOST"),
+            'port': int(os.getenv("MONGO_PORT")),
+            'username': os.getenv("MONGO_USER"),
+            'password': os.getenv("MONGO_PASSWORD"),
+        }
     }
 }
 
+DATABASE_ROUTERS = ['myproject.database_router.MyDatabaseRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

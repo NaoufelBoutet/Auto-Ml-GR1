@@ -18,17 +18,17 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib import admin
 from django.urls import include, path
-from AutoMLv2 import views as autoML_views
+from main_app_autoML import views as main_app_autoML_views
 from auth_user import views as auth_user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('admin/', admin.site.urls),
-    path('', autoML_views.home, name='home'),
+    path('', main_app_autoML_views.home, name='home'),
     path('login/',auth_user_views.show_login, name='show_login'),
     path('sign/', auth_user_views.show_sign, name='show_sign'),
     path('users/', auth_user_views.sign_in, name='sign_in'),
     path('connect/',auth_user_views.login, name='login'),
-    path('username/<str:username>/',autoML_views.espace_personel,name='perso'),
+    path('username/<str:username>/',main_app_autoML_views.espace_personel,name='perso'),
     path('sucess/',auth_user_views.success, name='success')
 ]

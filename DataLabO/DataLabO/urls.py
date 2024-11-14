@@ -14,5 +14,6 @@ urlpatterns = [
     path('inscriptions/', Authentification_views.inscriptions , name='inscription'),
     path('login/', Authentification_views.login_view, name='login'),  # Utilisation de LoginView
     path('hello/', Site_views.hello, name="hello"), # alias et nom de la fonction, ici "hello"
+    path('', Authentification_views.login_view, name='login'),  # Utilisation de LoginView)
 ]
 
